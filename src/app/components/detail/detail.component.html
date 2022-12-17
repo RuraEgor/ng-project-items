@@ -1,0 +1,16 @@
+<div class="item item__cont item__cont_detail" *ngIf="item$ | async as item; else loading">
+  <div class="item__wrap">
+    <div class="img__cont item__img-cont">
+      <img [src]="item.image" alt="" class="img item__img item__img_desc">
+    </div>
+    <div class="info item__info">
+      <p class="info-el item__info-el">Title: <span class="info-el__res">{{item.title}}</span></p>
+      <p class="info-el item__info-el">Category: <span class="info-el__res">{{item.category}}</span></p>
+      <p class="info-el item__info-el">Price: <span class="info-el__res">{{item.price  | currency: ' RUB '}}</span></p>
+      <p class="info-el info-el__desc item__info-el">Description: <span class="info-el__res">{{item.description}}</span></p>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="loading" #loading>Loading...</div>
+</ng-template>

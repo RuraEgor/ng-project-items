@@ -1,0 +1,65 @@
+<div class="form__cont">
+  <h2 class="text-center form__title">Create Items</h2>
+  <form [formGroup]="form" class="form" (ngSubmit)="submit()">
+    <div class="input-cont">
+      <label class="label">
+        <p class="label__text">Title:</p>
+        <input type="text" formControlName="title" appFocus class="input form__input">
+      </label>
+      <p class="form__input-mes"
+         *ngIf="title.errors?.minlength && title.touched">
+        Fill field width min length.
+        Need {{title.errors?.minlength.requiredLength - title.errors?.minlength.actualLength}} characters.
+      </p>
+      <p class="form__input-mes"
+         *ngIf="title.errors?.required && title.touched">Field cannot be empty</p>
+    </div>
+    <div class="input-cont">
+      <label class="label">
+        <p class="label__text">Price:</p>
+        <input type="number" formControlName="price" class="input form__input">
+      </label>
+      <p class="form__input-mes"
+         *ngIf="price.errors?.required && price.touched">Field cannot be empty</p>
+      <p class="form__input-mes"
+         *ngIf="price.errors?.checkPrice && price.touched">Price can be only greater than zero</p>
+    </div>
+    <div class="input-cont">
+      <label class="label">
+        <p class="label__text">Image:</p>
+        <input type="text" formControlName="image" class="input form__input">
+      </label>
+      <p class="form__input-mes"
+         *ngIf="image.errors?.required && image.touched">Field cannot be empty</p>
+    </div>
+    <div class="input-cont">
+      <label class="label">
+        <p class="label__text">Category:</p>
+        <input type="text" formControlName="category" class="input form__input">
+      </label>
+      <p class="form__input-mes"
+         *ngIf="category.errors?.minlength && category.touched">
+        Fill field width min length.
+        Need {{category.errors?.minlength.requiredLength - category.errors?.minlength.actualLength}} characters.
+      </p>
+      <p class="form__input-mes"
+         *ngIf="category.errors?.required && category.touched">Field cannot be empty</p>
+    </div>
+    <div class="input-cont">
+      <label class="label">
+        <p class="label__text">Description:</p>
+        <input type="text" formControlName="description" class="input form__input">
+      </label>
+      <p class="form__input-mes"
+         *ngIf="description.errors?.minlength && description.touched">
+        Fill field width min length.
+        Need {{description.errors?.minlength.requiredLength - description.errors?.minlength.actualLength}} characters.
+      </p>
+      <p class="form__input-mes"
+         *ngIf="description.errors?.required && description.touched">Field cannot be empty</p>
+    </div>
+    <div class="form__btn-wrap">
+      <button type="submit" [disabled]="!form.valid" class="btn form__btn">Create</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="item item__cont" *ngIf="item">
+  <div class="item__wrap">
+    <div class="img__cont item__img-cont">
+      <a class="link link_img" [routerLink]="['item', item.id]">
+        <img [src]="item.image" alt="" class="img item__img">
+      </a>
+    </div>
+    <div class="info item__info">
+      <p class="info-el item__info-el">
+        <a class="link info-el__link" [routerLink]="['item', item.id]"
+      >Title: <span class="info-el__res">{{item.title}}</span></a>
+      </p>
+      <p class="info-el item__info-el">Category: <span class="info-el__res">{{item.category}}</span></p>
+      <p class="info-el item__info-el">Price: <span class="info-el__res">{{item.price | currency: ' RUB '}}</span></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="loading" class="loading">Loading...</div>
+<div *ngIf="!loading" class="filter__cont">
+  <input
+    class="input input__filter"
+    appFocus
+    type="text"
+    placeholder="Filter items..."
+    [(ngModel)]="titleFl"
+  >
+</div>
+<app-item
+  [item]="item"
+  *ngFor="let item of items | filterItems: titleFl; let i = index"
+></app-item>
+

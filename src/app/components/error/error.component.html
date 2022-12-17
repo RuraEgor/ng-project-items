@@ -1,0 +1,4 @@
+<div class="error__wrap" *ngIf="errorService.error$ | async as error">
+  <p class="error__text">{{error}}</p>
+  <button (click)="errorService.clear()" class="btn error__btn">&times;</button>
+</div>

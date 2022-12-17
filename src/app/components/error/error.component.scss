@@ -1,0 +1,16 @@
+.error__wrap {
+  background: red;
+  display: flex;
+  justify-content: center;
+  padding: 10px 100px;
+}
+.error__text {
+  color: #262626;
+  font-size: 14px;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+}
+.error__btn {
+  margin-left: 20px;
+}

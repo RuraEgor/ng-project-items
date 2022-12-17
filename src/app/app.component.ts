@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ItemsService } from '../services/items.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ng-rura-egor-test';
+  
+  constructor(private _ItemsService: ItemsService){
+    this._ItemsService.clearStore();
+  }
 }

@@ -1,0 +1,215 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: $gray-ll;
+}
+
+button {
+  cursor: pointer;
+  transition: opacity 0.8s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  min-width: 50px;
+  border-radius: 6px;
+  background: #787878;
+  border: none;
+  color: #dddddd;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+}
+
+img {
+
+}
+
+.text-center {
+  text-align: center;
+}
+.loading {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.link {
+  text-decoration: none;
+}
+.link:hover {
+  opacity: 0.8;
+}
+.link_img:hover {
+  opacity: 1;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0px 0px 20px;
+}
+
+// HEADER - START  ---------------------------------------------
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: $green;
+}
+.nav {
+
+}
+.nav__link {
+  font-size: 32px;
+  margin-right: 20px;
+}
+.nav__link.active {
+  color: #ff6161;
+  font-weight: bold;
+}
+
+.main {
+  padding: 20px 150px;
+
+  @media (max-width: 1200px) {
+    padding: 20px 30px;
+  }
+}
+// HEADER - END  ---------------------------------------------
+
+// ITEM CARD - START  ---------------------------------------------
+.item {
+  padding: 10px 20px 20px;
+  margin: 0 auto 20px;
+  max-width: 600px;
+  background: $white;
+  border-radius: 5px;
+}
+.item__cont_detail {
+  max-width: 800px;
+}
+.item__wrap {
+
+}
+.img__cont {
+  text-align: center;
+}
+.link_img {
+
+}
+.img {
+
+}
+.item__img {
+  width: 100%;
+  max-width: 200px;
+  border: 4px solid transparent;
+  transition: border-color 0.8s;
+  margin-bottom: 20px;
+
+  &:hover {
+    border-color: #843fff;
+  }
+}
+.item__img.item__img_desc {
+  max-width: 350px;
+  border: 4px solid transparent;
+}
+
+.info {
+
+}
+.info-el {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.info-el__link {
+  color: $puple;
+}
+.info-el__res {
+  font-weight: normal;
+}
+.info-el__desc {
+  margin-top: 20px;
+}
+// ITEM CARD - END  ---------------------------------------------
+
+// FORM - START  ---------------------------------------------
+.input {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 5px;
+  border: 1px solid $gray-l;
+  transition: border-color 0.8s;
+  font-size: 22px;
+  height: 40px;
+  padding: 0 10px;
+
+  &:focus {
+    border-color: $gray-ll;
+  }
+}
+.form__title {
+  font-weight: bold;
+  font-size: 32px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-transform: uppercase;
+}
+.form__cont {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.form {
+  max-width: 600px;
+  width: 100%;
+}
+.input-cont {
+  min-height: 95px;
+  margin-bottom: 0px;
+}
+.label {
+
+}
+.label__text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.form__input {
+
+}
+.form__input-mes {
+  color: $red;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.form__btn-wrap {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+.form__btn {
+  min-width: 150px;
+  min-height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+}
+// FORM - END  ---------------------------------------------
