@@ -16,7 +16,7 @@ export class ItemsService {
   
   getAll(): Observable<IItem[]>{
     return this._http.get<IItem[]>('https://fakestoreapi.com/products', {
-      params: new HttpParams().append('limit', 2)
+      params: new HttpParams().append('limit', 10)
     }).pipe(
       map( (el) => {
         el.forEach( (m) => delete m?.rating)
@@ -43,7 +43,7 @@ export class ItemsService {
   
   setItem(item: IItem): void {
     let masItems = this.getStore();
-    masItems.push(item);
+    masItems.unshift(item);
     this.setStore(masItems);
     this._router.navigate(['/']);
   }
@@ -57,9 +57,9 @@ export class ItemsService {
     localStorage.setItem('items', JSON.stringify(items));
   }
   
-  getStore(): any {
+  getStore(): IItem[] {
     let mass = localStorage.getItem('items');
-    const parseMass = JSON.parse(mass as any);
+    const parseMass = JSON.parse(mass as string);
     return parseMass;
   }
   
